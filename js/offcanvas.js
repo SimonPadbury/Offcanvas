@@ -4,7 +4,7 @@
   
 	$(document).ready(function () {
 
-		// Off-canvas
+		// Offcanvas
 			
 		function off_canvas_open() {
 			$('body').addClass('offcanvas-open');
