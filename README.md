@@ -1,8 +1,10 @@
 #Offcanvas – a jQuery plugin with multiple sidebar options
 
+###Version 1.1
+
 Here is a simple off-canvas sidebar with multiple options for configuration.
 
-_Offcanvas_ should be compatible with any CSS framework (e.g. Bootstrap, Foundation). If it isn't, probably the only thing you will have to do is rename the _Offcanvas_ CSS classes.
+_Offcanvas_ should be compatible with any CSS framework (e.g. Bootstrap, Foundation). If it isn't, then probably the only thing you will have to do is rename the _Offcanvas_ CSS classes.
 
 ---
 
@@ -10,40 +12,43 @@ _Offcanvas_ should be compatible with any CSS framework (e.g. Bootstrap, Foundat
 
 In `example.html` I have linked to the Google CDN but you can use other jQuery libraries, local (to your site deployment) or hosted.
 
-That said, all `js/offcanvas.js` is doing is adding/removing the class `offcanvas-open` to the BODY tag in the HTML.
-
 ###Example HTML
 
 ```
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>Offcanvas</title>
-		<meta charset="utf-8">
-		<link href="css/offcanvas.min.css" rel="stylesheet" type="text/css" media="all">
-	</head>
-	<body>
-		<div id="page-wrapper" class="offcanvas-push-right">
-			<div class="offcanvas-navicon"><span></span></div>
-			<div class="offcanvas-overlay"></div>
-			<section class="offcanvas-sidebar">
-				<h4>Menu 1</h4>
-				<ul>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-				</ul>
-			</section>
-			<section class="main-section">
-      				<!-- Your entire page goes in here -->
-			</section>
-		</div><!-- /.page-wrapper -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="js/offcanvas.js"></script>
-	</body>
-</html>
-	
+    <head>
+        <title>Offcanvas</title>
+        <link href="css/offcanvas.min.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <div id="page-wrapper" class="offcanvas-push-right">
+            <div class="offcanvas-navicon"><span></span></div>
+            <div class="offcanvas-overlay"></div>
+            <section class="offcanvas-sidebar">
+                <h4>Menu 1</h4>
+                <ul>
+                    <li><a href="">Link 1.1</a>
+                        <ul>
+                            <li><a href="">Link 1.1.1</a></li>
+                            <li><a href="">Link 1.1.2</a></li>
+                            <li><a href="">Link 1.1.3</a></li>
+                            <li><a href="">Link 1.1.4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Link 1.2</a></li>
+                    <li><a href="">Link 1.3</a></li>
+                    <li><a href="">Link 1.4</a></li>
+                </ul>
+            </section>
+            <section class="main-section">
+                    <!-- Your entire page goes in here -->
+            </section>
+        </div><!-- /.page-wrapper -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/offcanvas.js"></script>
+    </body>
+</html>	
 ```
 
 ###Behaviour
@@ -56,9 +61,29 @@ A semi-transparent overlay covers the main-section during _Offcanvas_ exposure. 
 
 Also, changing the window-width dismisses the _Offcanvas_ (whether browser window resize on a desktop or laptop computer, or reorientation of a tablet or phone portrait <=> landscape).
 
-**NOTE:** no media queries have been set for _Offcanvas_. This is deliberate. It is up to you to set media queries as you choose (or not). For example, you may choose to have _Offcanvas_  operate only for phones, or for tablets and phones, or for any size screen.
+---
+
+###NEW in version 1.1: Child menus
+
+_Offcanvas_ can now do "child menus" – you simply place an unordered list within the parent <li> and _Offcanvas_ handle everything. The jQuery script will insert a <span> containing "»" into the parent list item – visitors clicking this will see _Offvanvas_ slide to the left, revealing the child menu. And above the child menu the script will insert a <span> containing "« Back" – visitors clicking this will see _Offcanvas_ slide to the right again, revealing the parent menu.
 
 ---
+
+###Responsive or not; you choose
+
+No media queries have been set for _Offcanvas_. This is deliberate. It is up to you to set media queries as you choose (or not). You may choose to have _Offcanvas_ to display and operate only for phones, or for tablets and phones, or for any size screen.
+
+This is how: simply set the _Offcanvas components_ to "display: none" for the screen screen sizes where you don't require it. For example:
+
+```
+@media (min-width: 768px) {
+    .offcanvas-navicon;
+    .offcanvas-overlay;
+    .offcanvas-sidebar {
+        display: none
+    }
+}
+```
 
 ###6 sidebar options
 
