@@ -6,13 +6,9 @@ Here is a simple off-canvas sidebar with multiple options for configuration.
 
 _Offcanvas_ should be compatible with any CSS framework (e.g. Bootstrap, Foundation). If it isn't, then probably the only thing you will have to do is rename the _Offcanvas_ CSS classes.
 
----
-
 ###jQuery required 
 
 In `example.html` I have linked to the Google CDN but you can use other jQuery libraries, local (to your site deployment) or hosted.
-
----
 
 ###Example HTML
 
@@ -63,13 +59,9 @@ A semi-transparent overlay covers the main-section during _Offcanvas_ exposure. 
 
 Also, changing the window-width dismisses the _Offcanvas_ (whether browser window resize on a desktop or laptop computer, or reorientation of a tablet or phone portrait <=> landscape).
 
----
-
 ###NEW in version 1.1: Child menus
 
 _Offcanvas_ can now do "child menus" – you simply place an unordered list within the parent <li> and _Offcanvas_ handle everything. The jQuery script will insert a <span> containing "»" into the parent list item – visitors clicking this will see _Offvanvas_ slide to the left, revealing the child menu. And above the child menu the script will insert a <span> containing "« Back" – visitors clicking this will see _Offcanvas_ slide to the right again, revealing the parent menu.
-
----
 
 ###Responsive or not; you choose
 
@@ -99,8 +91,6 @@ _Offcanvas_ is configured for one sidebar instance. But that sidebar could be an
 * `offcanvas-push-right` – the off-canvas sidebar slides in from the right, and the main-section moves left to accommodate it.
 
 All these movements are done by CSS3 transitions. In each case the movement is 15.625rem (250px).
-
----
 
 ###SCSS file included
 
