@@ -1,0 +1,257 @@
+// Offcanvas
+
+body {
+	overflow: hidden
+}
+.main-section {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background: #fff;
+	transition: all 400ms ease;
+}
+.offcanvas-navicon {
+	height: 2.3rem;
+	width: 2.3rem;
+	position: fixed;
+	top: 1rem;
+	z-index: 102;
+	transition: all 400ms ease;
+	&:hover {
+	  cursor:pointer;
+	}
+	span {
+		position: relative;
+	}
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0.5rem;
+		top: 0.5em;
+		width: 1.3rem;
+		height: 0.25rem;
+		background: #000;
+		box-shadow: 
+		0 0.5rem 0 0 #000,
+    	0 1rem 0 0 #000;
+	}
+}
+.offcanvas-overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: #fff;
+	opacity: 0;
+	transition: all 400ms ease;
+}
+
+// Positioning and animating Offcanvas
+
+.offcanvas-sidebar {
+	width: 15.625rem;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #fff;
+	overflow-y: auto;
+	padding-top: 3.125rem;
+	transition: all 400ms ease;
+}
+.offcanvas-over-left {
+	.offcanvas-navicon {
+		left: 1rem
+	}
+	.offcanvas-sidebar {
+		left: 0;
+		z-index: 100;
+		margin-left: -15.625rem
+	}
+}
+.offcanvas-over-right {
+	.offcanvas-navicon {
+		right: 1rem
+	}
+	.offcanvas-sidebar {
+		right: 0;
+		z-index: 100;
+		margin-right: -15.625rem
+	}
+}
+.offcanvas-push-left {
+	.offcanvas-navicon {
+		left: 1rem
+	}
+	.offcanvas-sidebar {
+		left: 0;
+		margin-left: -15.625rem
+	}
+}
+.offcanvas-push-right {
+	.offcanvas-navicon {
+		right: 1rem
+	}
+	.offcanvas-sidebar {
+		right: 0;
+		margin-right: -15.625rem
+	}
+}
+.offcanvas-under-left {
+	.offcanvas-navicon {
+		left: 1rem
+	}
+	.offcanvas-sidebar {
+		left: 0;
+		margin-left: 0
+	}
+}
+.offcanvas-under-right {
+	.offcanvas-navicon {
+		right: 1rem
+	}
+	.offcanvas-sidebar {
+		right: 0;
+		margin-right: 0
+	}
+	.offcanvas-sidebar {
+		z-index: 0;
+		margin-right: 0
+	}
+}
+.offcanvas-open {
+	.offcanvas-overlay {
+		z-index: 100;
+		background: #000;
+		opacity: 0.1;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.offcanvas-over-left {
+		.offcanvas-sidebar {
+			margin-left: 0;
+			box-shadow: 0 0 0.3125rem #000
+		}
+	}
+	.offcanvas-over-right {
+		.offcanvas-sidebar {
+			margin-right: 0;
+			box-shadow: 0 0 0.3125rem #000
+		}
+	}
+	.offcanvas-push-left {
+		.offcanvas-overlay {
+			margin-left: 15.625rem;
+		}
+		.offcanvas-sidebar {
+			margin-left: 0
+		}
+		.main-section {
+			margin-right: -15.625rem;
+			margin-left: 15.625rem;
+		}
+	}
+	.offcanvas-push-right {
+		.offcanvas-overlay {
+			margin-left: -15.625rem;
+		}
+		.offcanvas-sidebar {
+			margin-right: 0
+		}
+		.main-section {
+			margin-right: 15.625rem;
+			margin-left: -15.625rem;
+		}
+	}
+	.offcanvas-under-left {
+		.offcanvas-overlay {
+			margin-left: 15.625rem;
+		}
+		.main-section {
+			margin-right: -15.625rem;
+			margin-left: 15.625rem;
+			box-shadow: 0 0 0.3125rem #000
+		}
+	}
+	.offcanvas-under-right {
+		.offcanvas-overlay {
+			margin-left: -15.625rem;
+		}
+		.main-section {
+			margin-right: 15.625rem;
+			margin-left: -15.625rem;
+			box-shadow: 0 0 0.3125rem #000
+		}
+	}
+}
+
+// Styling Offcanvas
+
+.offcanvas-sidebar {
+    overflow-x: hidden;
+    h4 {
+        margin: 1rem 1rem 0.75rem 1rem
+    }
+    ul {
+        width: 13.625rem;
+        margin: 0 1rem;
+        border-top: 0.0625rem solid #eee;
+    }
+    a {
+        display: block;
+        border-bottom: 0.0625rem solid #eee;
+        padding: 0.3125rem 0.625rem;
+        color: #aaa;
+        text-decoration: none;
+        &:hover {
+            color: #888;
+            background: #fafafa
+        }
+    }
+    ul ul {
+        position: absolute;
+        float: right;
+        margin-top: -2.3125rem;
+        margin-left: 15.625rem
+    }
+    div {
+        transition: all 400ms ease;
+    }
+    &.offcanvas-child-open > div {
+        margin-left: -15.625rem;
+    }
+}
+.offcanvas-child-link {
+    position: absolute;
+    display: inline-block;
+    width: 2rem;
+    margin-top: -2.25rem;
+    margin-left: 11.625rem;
+    border-left: 0.0625rem solid #eee;
+    padding: 0.3125rem 0.625rem;
+    font-size: 1.1rem;
+    color: #aaa;
+    background: #fff;
+    &:hover {
+        cursor: pointer;
+        color: #888;
+        background: #fafafa
+    }
+}
+.offcanvas-child-back-link {
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin-top: -2.3125rem;
+    border-top: 0.0625rem solid #eee;
+    padding: 0.3125rem 0.625rem;
+    color: #aaa;
+    &:hover {
+        cursor: pointer;
+        color: #888;
+        background: #fafafa
+    }
+}
