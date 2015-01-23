@@ -12,6 +12,8 @@ _Offcanvas_ should be compatible with any CSS framework (e.g. Bootstrap, Foundat
 
 In `example.html` I have linked to the Google CDN but you can use other jQuery libraries, local (to your site deployment) or hosted.
 
+---
+
 ###Example HTML
 
 ```
