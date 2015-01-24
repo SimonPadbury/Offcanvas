@@ -61,7 +61,7 @@ Also, changing the window-width dismisses the _Offcanvas_ (whether browser windo
 
 ###NEW in version 1.1: Child menus
 
-_Offcanvas_ can now do "child menus" – you simply place an unordered list within the parent <li> and _Offcanvas_ handle everything. The jQuery script will insert a <span> containing "»" into the parent list item – visitors clicking this will see _Offvanvas_ slide to the left, revealing the child menu. And above the child menu the script will insert a <span> containing "« Back" – visitors clicking this will see _Offcanvas_ slide to the right again, revealing the parent menu.
+_Offcanvas_ can now do "child menus" – you simply place an unordered list within the parent LI item and _Offcanvas_ handle everything. The jQuery script will insert a <span> containing "»" into the parent list item – visitors clicking this will see _Offvanvas_ slide to the left, revealing the child menu. And above the child menu the script will insert a <span> containing "« Back" – visitors clicking this will see _Offcanvas_ slide to the right again, revealing the parent menu.
 
 ###Responsive or not; you choose
 
