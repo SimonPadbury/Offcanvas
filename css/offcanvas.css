@@ -1,5 +1,5 @@
 body {
-    overflow: hidden
+    overflow: hidden; 
 }
 
 .main-section {
@@ -8,7 +8,7 @@ body {
     height: 100%;
     overflow-y: auto;
     background: #fff;
-    transition: all 400ms ease
+    transition: all 400ms ease; 
 }
 
 .offcanvas-navicon {
@@ -17,26 +17,23 @@ body {
     position: fixed;
     top: 1rem;
     z-index: 102;
-    transition: all 400ms ease
+    transition: all 400ms ease; 
 }
-
 .offcanvas-navicon:hover {
-    cursor: pointer
+    cursor: pointer; 
 }
-
 .offcanvas-navicon span {
-    position: relative
+    position: relative; 
 }
-
 .offcanvas-navicon:before {
     content: "";
     position: absolute;
-    left: .5rem;
-    top: .5em;
+    left: 0.5rem;
+    top: 0.5em;
     width: 1.3rem;
-    height: .25rem;
+    height: 0.25rem;
     background: #000;
-    box-shadow: 0 .5rem 0 0 #000, 0 1rem 0 0 #000
+    box-shadow: 0 0.5rem 0 0 #000, 0 1rem 0 0 #000; 
 }
 
 .offcanvas-overlay {
@@ -48,7 +45,7 @@ body {
     z-index: -1;
     background: #fff;
     opacity: 0;
-    transition: all 400ms ease
+    transition: all 400ms ease; 
 }
 
 .offcanvas-sidebar {
@@ -59,172 +56,153 @@ body {
     background-color: #fff;
     overflow-y: auto;
     padding-top: 3.125rem;
-    transition: all 400ms ease
+    transition: all 400ms ease; 
 }
 
 .offcanvas-over-left .offcanvas-navicon {
-    left: 1rem
+le  ft: 1rem; 
 }
-
 .offcanvas-over-left .offcanvas-sidebar {
     left: 0;
     z-index: 100;
-    margin-left: -15.625rem
+    margin-left: -15.625rem; 
 }
 
 .offcanvas-over-right .offcanvas-navicon {
-    right: 1rem
+    right: 1rem; 
 }
-
 .offcanvas-over-right .offcanvas-sidebar {
     right: 0;
     z-index: 100;
-    margin-right: -15.625rem
+    margin-right: -15.625rem; 
 }
 
 .offcanvas-push-left .offcanvas-navicon {
-    left: 1rem
+    left: 1rem; 
 }
-
 .offcanvas-push-left .offcanvas-sidebar {
     left: 0;
-    margin-left: -15.625rem
+    margin-left: -15.625rem; 
 }
 
 .offcanvas-push-right .offcanvas-navicon {
-    right: 1rem
+    right: 1rem; 
 }
-
 .offcanvas-push-right .offcanvas-sidebar {
     right: 0;
-    margin-right: -15.625rem
+    margin-right: -15.625rem; 
 }
 
 .offcanvas-under-left .offcanvas-navicon {
-    left: 1rem
+    left: 1rem; 
 }
-
 .offcanvas-under-left .offcanvas-sidebar {
     left: 0;
-    margin-left: 0
+    margin-left: 0; 
 }
 
 .offcanvas-under-right .offcanvas-navicon {
-    right: 1rem
+    right: 1rem; 
 }
-
 .offcanvas-under-right .offcanvas-sidebar {
     right: 0;
+    margin-right: 0; 
+}
+.offcanvas-under-right .offcanvas-sidebar {
     z-index: 0;
-    margin-right: 0
+    margin-right: 0; 
 }
 
 .offcanvas-open .offcanvas-overlay {
     z-index: 100;
     background: #000;
-    opacity: .1
+    opacity: 0.1;
 }
-
 .offcanvas-open .offcanvas-overlay:hover {
-    cursor: pointer
+    cursor: pointer; 
 }
-
 .offcanvas-open .offcanvas-over-left .offcanvas-sidebar {
     margin-left: 0;
-    box-shadow: 0 0 .3125rem #000
+    box-shadow: 0 0 0.3125rem #000; 
 }
-
 .offcanvas-open .offcanvas-over-right .offcanvas-sidebar {
     margin-right: 0;
-    box-shadow: 0 0 .3125rem #000
+    box-shadow: 0 0 0.3125rem #000; 
 }
-
 .offcanvas-open .offcanvas-push-left .offcanvas-overlay {
-    margin-left: 15.625rem
+    margin-left: 15.625rem; 
 }
-
 .offcanvas-open .offcanvas-push-left .offcanvas-sidebar {
-    margin-left: 0
+    margin-left: 0; 
 }
-
 .offcanvas-open .offcanvas-push-left .main-section {
     margin-right: -15.625rem;
-    margin-left: 15.625rem
+    margin-left: 15.625rem; 
 }
-
 .offcanvas-open .offcanvas-push-right .offcanvas-overlay {
-    margin-left: -15.625rem
+    margin-left: -15.625rem; 
 }
-
 .offcanvas-open .offcanvas-push-right .offcanvas-sidebar {
-    margin-right: 0
+    margin-right: 0; 
 }
-
 .offcanvas-open .offcanvas-push-right .main-section {
     margin-right: 15.625rem;
-    margin-left: -15.625rem
+    margin-left: -15.625rem; 
 }
-
 .offcanvas-open .offcanvas-under-left .offcanvas-overlay {
-    margin-left: 15.625rem
+    margin-left: 15.625rem; 
 }
-
 .offcanvas-open .offcanvas-under-left .main-section {
     margin-right: -15.625rem;
     margin-left: 15.625rem;
-    box-shadow: 0 0 .3125rem #000
+    box-shadow: 0 0 0.3125rem #000; 
 }
-
 .offcanvas-open .offcanvas-under-right .offcanvas-overlay {
-    margin-left: -15.625rem
+    margin-left: -15.625rem;
 }
-
 .offcanvas-open .offcanvas-under-right .main-section {
     margin-right: 15.625rem;
     margin-left: -15.625rem;
-    box-shadow: 0 0 .3125rem #000
+    box-shadow: 0 0 0.3125rem #000; 
 }
 
 .offcanvas-sidebar {
-    overflow-x: hidden
+    overflow-x: hidden; 
 }
-
 .offcanvas-sidebar h4 {
-    margin: 1rem 1rem .75rem
+    margin: 1rem 1rem 0.75rem 1rem; 
 }
-
 .offcanvas-sidebar ul {
     width: 13.625rem;
     margin: 0 1rem;
-    border-top: .0625rem solid #eee
+    border-top: 0.0625rem solid #eee; 
 }
-
 .offcanvas-sidebar a {
     display: block;
-    border-bottom: .0625rem solid #eee;
-    padding: .3125rem .625rem;
+    border-bottom: 0.0625rem solid #eee;
+    padding: 0.3125rem 0.625rem;
     color: #aaa;
-    text-decoration: none
+    text-decoration: none;
 }
-
 .offcanvas-sidebar a:hover {
     color: #888;
-    background: #fafafa
+    background: #fafafa; 
 }
-
 .offcanvas-sidebar ul ul {
+    display: none;
     position: absolute;
     float: right;
     margin-top: -2.3125rem;
-    margin-left: 15.625rem
+    margin-left: 15.625rem; 
 }
-
 .offcanvas-sidebar div {
-    transition: all 400ms ease
+    transition: all 400ms ease; 
 }
-
-.offcanvas-sidebar.offcanvas-child-open>div {
-    margin-left: -15.625rem
+.offcanvas-sidebar.offcanvas-child-open > div {
+    margin-left: -15.625rem; 
+}
+.offcanvas-sidebar.offcanvas-child-open > div .offcanvas-child-visible {
+    display: block; 
 }
 
 .offcanvas-child-link {
@@ -233,17 +211,16 @@ body {
     width: 2rem;
     margin-top: -2.25rem;
     margin-left: 11.625rem;
-    border-left: .0625rem solid #eee;
-    padding: .3125rem .625rem;
+    border-left: 0.0625rem solid #eee;
+    padding: 0.3125rem 0.625rem;
     font-size: 1.1rem;
     color: #aaa;
-    background: #fff
+    background: #fff; 
 }
-
 .offcanvas-child-link:hover {
     cursor: pointer;
     color: #888;
-    background: #fafafa
+    background: #fafafa; 
 }
 
 .offcanvas-child-back-link {
@@ -251,13 +228,12 @@ body {
     display: block;
     width: 100%;
     margin-top: -2.3125rem;
-    border-top: .0625rem solid #eee;
-    padding: .3125rem .625rem;
-    color: #aaa
+    border-top: 0.0625rem solid #eee;
+    padding: 0.3125rem 0.625rem;
+    color: #aaa; 
 }
-
 .offcanvas-child-back-link:hover {
     cursor: pointer;
     color: #888;
-    background: #fafafa
+    background: #fafafa;
 }
