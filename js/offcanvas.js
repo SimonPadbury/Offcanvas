@@ -13,6 +13,7 @@
 		}
 		function off_canvas_close() {
 			$('body').removeClass('offcanvas-open');
+			$('.offcanvas-sidebar ul ul').removeClass('offcanvas-child-visible');
 			$('.offcanvas-sidebar').delay(400).animate({scrollTop : 0}, 50);
 		}
 
