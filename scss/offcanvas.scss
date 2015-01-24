@@ -212,6 +212,7 @@ body {
         }
     }
     ul ul {
+        display: none;
         position: absolute;
         float: right;
         margin-top: -2.3125rem;
@@ -222,6 +223,9 @@ body {
     }
     &.offcanvas-child-open > div {
         margin-left: -15.625rem;
+        .offcanvas-child-visible {
+            display: block
+        }
     }
 }
 .offcanvas-child-link {
