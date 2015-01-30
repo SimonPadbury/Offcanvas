@@ -175,7 +175,9 @@ le  ft: 1rem;
 .offcanvas-sidebar ul {
     width: 13.625rem;
     margin: 0 1rem;
-    border-top: 0.0625rem solid #eee; 
+    border-top: 0.0625rem solid #eee;
+	list-style-type: none;
+	padding: 0
 }
 .offcanvas-sidebar a {
     display: block;
