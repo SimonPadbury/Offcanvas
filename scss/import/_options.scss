@@ -1,0 +1,117 @@
+// OFFCANVAS - options
+// ===================
+// `@include` one of these `@mixins` in your `body` styling.
+
+@mixin offcanvas-over-left {
+  #offcanvas-navicon {
+		left: 16px;
+	}
+	#offcanvas-sidebar {
+		left: 0;
+		z-index: $offcanvas-overlay-z-index + 1;
+		transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+	}
+  &.offcanvas-open {
+    #offcanvas-sidebar {
+      box-shadow: $offcanvas-box-shadow;
+			transform: translate3d(0, 0, 0);
+		}
+  }
+}
+
+@mixin offcanvas-over-right {
+	#offcanvas-navicon {
+		right: 16px;
+	}
+	#offcanvas-sidebar {
+		right: 0;
+		z-index: $offcanvas-overlay-z-index + 1;
+		transform: translate3d($offcanvas-sidebar-width, 0, 0);
+	}
+  &.offcanvas-open {
+    #offcanvas-sidebar {
+      box-shadow: $offcanvas-box-shadow;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+
+@mixin offcanvas-push-left {
+	#offcanvas-navicon {
+		left: 16px;
+	}
+	#offcanvas-sidebar {
+		left: 0;
+    z-index: $offcanvas-overlay-z-index + 1;
+		transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+	}
+  &.offcanvas-open {
+    #offcanvas-sidebar {
+			transform: translate3d(0, 0, 0);
+		}
+		#page-wrap {
+			transform: translate3d($offcanvas-sidebar-width, 0, 0);
+		}
+  }
+}
+
+@mixin offcanvas-push-right {
+	#offcanvas-navicon {
+		right: 16px;
+	}
+	#offcanvas-sidebar {
+		right: 0;
+    z-index: $offcanvas-overlay-z-index + 1;
+		transform: translate3d($offcanvas-sidebar-width, 0, 0);
+	}
+  &.offcanvas-open {
+    #offcanvas-sidebar {
+			transform: translate3d(0, 0, 0);
+		}
+		#page-wrap {
+			transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+		}
+  }
+}
+
+@mixin offcanvas-under-left {
+	#offcanvas-navicon {
+		left: 16px;
+	}
+	#offcanvas-sidebar {
+		z-index: 0;
+	}
+	#page-wrap {
+    box-shadow: $offcanvas-box-shadow;
+  }
+  &.offcanvas-open {
+    #offcanvas-overlay {
+			transform: translate3d($offcanvas-sidebar-width, 0, 0);
+		}
+		#page-wrap {
+      transform: translate3d($offcanvas-sidebar-width, 0, 0);
+		}
+  }
+}
+
+@mixin offcanvas-under-right {
+	#offcanvas-navicon {
+		right: 16px;
+	}
+	#offcanvas-sidebar {
+		right: 0;
+    z-index: 0;
+	}
+  #page-wrap {
+    box-shadow: $offcanvas-box-shadow;
+  }
+  &.offcanvas-open {
+    #offcanvas-overlay {
+			transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+		}
+		#page-wrap {
+			transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+		}
+  }
+}

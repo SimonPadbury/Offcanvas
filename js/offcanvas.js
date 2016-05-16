@@ -1,57 +1,85 @@
-/*jslint browser: true*/
-/*global $, jQuery*/
+// Offcanvas (jQuery plugin)
+// Version 2
+// =========================
 
-(function ($) {
-	
-	"use strict";
-  
-	$(document).ready(function () {
+(function($) {
 
-		// Offcanvas main menu functions
-		function off_canvas_open() {
-			$('body').addClass('offcanvas-open');
+  "use strict";
+
+  $(document).ready(function() {
+
+    // Setup
+
+    $('body').prepend('<div id="offcanvas-overlay"></div><div id="offcanvas-navicon"><span></span></div>');
+    $('#offcanvas-sidebar ul ul').parent().append('<span class="offcanvas-child-link">&raquo;</span>');
+    $('#offcanvas-sidebar ul ul').prepend('<span class="offcanvas-child-back-link">&laquo; Back</span>');
+
+    // Offcanvas open/close functions
+
+    function offcanvas_open() {
+      $('body').addClass('offcanvas-open');
+    }
+    function offcanvas_close() {
+      $('body').removeClass('offcanvas-open');
+      $('#offcanvas-sidebar ul ul').removeClass('offcanvas-child-visible');
+      $('#offcanvas-sidebar').delay(400).animate({
+        scrollTop: 0
+      }, 50);
+    }
+
+    // Offcanvas navicon
+
+    function offcanvas_navicon(e) {
+      if (!$('body').hasClass('offcanvas-open')) {
+        offcanvas_open();
+      } else {
+        offcanvas_close();
+      }
+      e.preventDefault();
+    }
+    $('#offcanvas-navicon').on('click', offcanvas_navicon);
+    $('#offcanvas-navicon').on('touchstart', offcanvas_navicon);
+
+    // Offcanvas child menu functions
+
+    function offcanvas_child_open() {
+      $('#offcanvas-sidebar').addClass('offcanvas-child-open');
+    }
+    function offcanvas_child_close() {
+      $('#offcanvas-sidebar').removeClass('offcanvas-child-open');
+    }
+
+		// Offcanvas child link
+
+		function offcanvas_child_link(e) {
+			$(this).siblings('ul').addClass('offcanvas-child-visible');
+      offcanvas_child_open();
+			e.preventDefault();
 		}
-		function off_canvas_close() {
-			$('body').removeClass('offcanvas-open');
-			$('.offcanvas-sidebar ul ul').removeClass('offcanvas-child-visible');
-			$('.offcanvas-sidebar').delay(400).animate({scrollTop : 0}, 50);
-		}
+		$('.offcanvas-child-link').on('click', offcanvas_child_link);
+		$('.offcanvas-child-link').on('touchstart', offcanvas_child_link);
 
-        // Offcanvas child menu functions
-        function off_canvas_child_open() {
-			$('.offcanvas-sidebar').addClass('offcanvas-child-open');
-		}
-        function off_canvas_child_close() {
-			$('.offcanvas-sidebar').removeClass('offcanvas-child-open');
-		}
+		// Offcanvas child back link
 
-        $('.offcanvas-navicon').click(function () {
-			if (!$('body').hasClass('offcanvas-open')) {
-				off_canvas_open();
-			} else {
-				off_canvas_close();
-			}
-		});
-		$('.offcanvas-overlay').click(function () {
-			off_canvas_close();
-			off_canvas_child_close();
-		});
-		$(window).resize(function () {
-			off_canvas_close();
-			off_canvas_child_close();
-		});
-
-		$('.offcanvas-sidebar ul ul').parent().append('<span class="offcanvas-child-link">&raquo;</span>');
-		$('.offcanvas-sidebar ul ul').prepend('<span class="offcanvas-child-back-link">&laquo; Back</span>');
-	        
-		$('.offcanvas-child-link').click(function () {
-            $(this).siblings('ul').addClass('offcanvas-child-visible');
-			off_canvas_child_open();
-		});
-		$('.offcanvas-child-back-link').click(function () {
+		function offcanvas_child_back_link(e) {
 			$(this).parents('ul').removeClass('offcanvas-child-visible');
-			off_canvas_child_close();
-		});
-	});
+      offcanvas_child_close();
+			e.preventDefault();
+		}
+		$('.offcanvas-child-back-link').on('click', offcanvas_child_back_link);
+		$('.offcanvas-child-back-link').on('touchstart', offcanvas_child_back_link);
+
+		// Dismissing Offcanvas
+
+		function offcanvas_dismiss(e) {
+			offcanvas_close();
+      offcanvas_child_close();
+			e.preventDefault();
+		}
+		$('#offcanvas-overlay').on('click', offcanvas_dismiss);
+		$('#offcanvas-overlay').on('touchstart', offcanvas_dismiss);
+    $(window).on('resize', offcanvas_dismiss);
+
+  });
 
 }(jQuery));

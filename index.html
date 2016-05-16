@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Offcanvas</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale 1, user-scalable=no">
+  <link href="css/offcanvas.min.css" rel="stylesheet" type="text/css" media="screen">
+  <style>
+    /*
+    Box-sizing: border-box
+    ======================
+    Credit: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+    */
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 18px;
+        line-height: 1.618;
+      }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    h1 {
+      font-size: 60px;
+      font-weight: lighter;
+    }
+
+    h2 {
+      font-weight: lighter;
+    }
+    code {
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 0 3px;
+        font-size: 16px;
+        background: #f6f6f6;
+    }
+
+    pre {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 10px;
+        font-size: 16px;
+        background: #f6f6f6;
+        overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="offcanvas-sidebar">
+    <div>
+      <h4>Menu 1</h4>
+      <ul>
+        <li><a href="#">Link 1.1</a>
+          <ul>
+            <li><a href="#">Link 1.1.1</a></li>
+            <li><a href="#">Link 1.1.2</a></li>
+            <li><a href="#">Link 1.1.3</a></li>
+            <li><a href="#">Link 1.1.4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Link 1.2</a></li>
+        <li><a href="#">Link 1.3</a></li>
+        <li><a href="#">Link 1.4</a></li>
+      </ul>
+      <h4>Menu 2</h4>
+      <ul>
+        <li><a href="#">Link 2.1</a></li>
+        <li><a href="#">Link 2.2</a></li>
+        <li><a href="#">Link 2.3</a></li>
+        <li><a href="#">Link 2.4</a>
+          <ul>
+            <li><a href="#">Link 2.4.1</a></li>
+            <li><a href="#">Link 2.4.2</a></li>
+            <li><a href="#">Link 2.4.3</a></li>
+            <li><a href="#">Link 2.4.4</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h4>Menu 3</h4>
+      <ul>
+        <li><a href="#">Link 3.1</a></li>
+        <li><a href="#">Link 3.2</a></li>
+        <li><a href="#">Link 3.3</a></li>
+        <li><a href="#">Link 3.4</a></li>
+      </ul>
+      <h4>Menu 4</h4>
+      <ul>
+        <li><a href="#">Link 4.1</a></li>
+        <li><a href="#">Link 4.2</a></li>
+        <li><a href="#">Link 4.3</a></li>
+        <li><a href="#">Link 4.4</a></li>
+      </ul>
+      <h4>Menu 5</h4>
+      <ul>
+        <li><a href="#">Link 5.1</a></li>
+        <li><a href="#">Link 5.2</a></li>
+        <li><a href="#">Link 5.3</a></li>
+        <li><a href="#">Link 5.4</a></li>
+      </ul>
+      <h4>Menu 6</h4>
+      <ul>
+        <li><a href="#">Link 6.1</a>
+          <ul>
+            <li><a href="#">Link 6.1.1</a></li>
+            <li><a href="#">Link 6.1.2</a></li>
+            <li><a href="#">Link 6.1.3</a></li>
+            <li><a href="#">Link 6.1.4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Link 6.2</a></li>
+        <li><a href="#">Link 6.3</a></li>
+        <li><a href="#">Link 6.4</a></li>
+      </ul>
+      <h4>Menu 7</h4>
+      <ul>
+        <li><a href="#">Link 7.1</a></li>
+        <li><a href="#">Link 7.2</a></li>
+        <li><a href="#">Link 7.3</a></li>
+        <li><a href="#">Link 7.4</a></li>
+      </ul>
+      <h4>Menu 8</h4>
+      <ul>
+        <li><a href="#">Link 8.1</a></li>
+        <li><a href="#">Link 8.2</a></li>
+        <li><a href="#">Link 8.3</a></li>
+        <li><a href="#">Link 8.4</a></li>
+      </ul>
+      <h4>Menu 9</h4>
+      <ul>
+        <li><a href="#">Link 9.1</a></li>
+        <li><a href="#">Link 9.2</a></li>
+        <li><a href="#">Link 9.3</a></li>
+        <li><a href="#">Link 9.4</a></li>
+      </ul>
+      <h4>Menu 10</h4>
+      <ul>
+        <li><a href="#">Link 10.1</a></li>
+        <li><a href="#">Link 10.2</a></li>
+        <li><a href="#">Link 10.3</a></li>
+        <li><a href="#">Link 10.4</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="page-wrap">
+    <div class="container">
+
+      <h1>Offcanvas</h1>
+
+      <p><i>Version 2.0</i></p>
+
+      <p>Offcanvas is an easy-to-use, touch enabled jQuery off-canvas sidebar plugin with multiple options for configuration. It should be compatible with any CSS framework. The animations are all performed by CSS3.</p>
+
+      <h2>Features</h2>
+
+      <ul>
+        <li>Easy to use</li>
+        <li>Touch enabled</li>
+        <li>Small filesizes for JS (<code>offcanvas.min.js</code>: 1 KB) and CSS (<code>offcanvas.min.css</code>: 3 KB)</li>
+        <li>SCSS project</li>
+        <li>Six off-canvas position/animation configuration options</li>
+      </ul>
+
+      <h2>Example HTML</h2>
+
+      <pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    ...
+    &lt;link href="<b>path/to/offcanvas.css</b>" rel="stylesheet" type="text/css" media="screen"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    <mark>&lt;section id="offcanvas-sidebar"&gt; ... &lt;/section&gt;</mark>
+
+    <mark>&lt;section id="page-wrap"&gt; ... &lt;/section&gt;</mark>
+
+    &lt;script src="<b>path/to/jquery.js</b>"&gt;&lt;/script&gt;
+    &lt;script src="<b>path/to/offcanvas.js</b>"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+      <h2>Behaviour</h2>
+
+      <p>The <i>Offcanvas</i> JS injects a <a href="http://www.transformicons.com">Transformicon</a>-style animated "hamburger" navicon, a semi-transparent dismiss overlay, and any <i>Offcanvas</i> child menu links and child menu back links as required.</p>
+
+      <p>The navicon is CSS <code>position:fixed</code> to the top-right or top-left corner of the window, depending on whether you configure a left or right off-canvas sidebar.</p>
+
+      <p>The <i>Offcanvas</i> sidebar is set to be always available wherever your visitor activates it, from any scroll position on the webpage. And it resets to its starting scroll/ first-level menu state whenever a visitor dismisses it.</p>
+
+      <p>The dismiss overlay is raised (from being hidden at <code>z-index: -1</code>) to cover the webpage during <i>Offcanvas</i> sidebar exposure. Click or tap this overlay (or the navicon) to dismiss it sidebar and hide the overlay again.</p>
+
+      <p>Changing the window-width (e.g. phone or tablet orientation change) will also dismiss the sidebar (and hide the overlay).</p>
+
+      <h2>Setup</h2>
+
+      <p>You can use the example HTML above to get you going.</p>
+
+      <p>All you need to do next is add your list of links. Be sure to put any 2<sup>nd</sup> level (child) lists within their parent <code>&lt;li&gt;</code> in the usual way.</p>
+
+      <pre>&lt;h4&gt;Menu 1&lt;/h4&gt;
+&lt;ul&gt;
+  <mark>&lt;li&gt;</mark>&lt;a href=""&gt;Link 1.1&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=""&gt;Link 1.1.1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;Link 1.1.2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;Link 1.1.3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=""&gt;Link 1.1.4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  <mark>&lt;/li&gt;</mark>
+  &lt;li&gt;&lt;a href=""&gt;Link 1.2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=""&gt;Link 1.3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=""&gt;Link 1.4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+      <p><strong>Note:</strong> all your other webpage content must be placed within a block element with <code>id="page-wrap"</code>.
+
+      <h2>Tap or click</h2>
+
+      <p>The <i>Offcanvas</i> JS will respond either to taps (using <code>touchstart()</code>) or clicks (using <code>click()</code>) depending on whichever pointing device your visitor uses.
+
+      <h2>Child menus</h2>
+
+      <p><i>Offcanvas</i> can display 2<sup>nd</sup> level (child) menus. You simply need to place an unordered list within the parent &lt;li&gt; and <i>Offcanvas</i> handle everything.</p>
+
+      <p> The jQuery script will insert a <code>&lt;span&gt;</code> containing "&raquo;" into the parent list item &ndash; visitors clicking this will see the <i>Offvanvas</i> sidebar slide to the left, revealing the child menu. And above the child menu the script will insert a <code>&lt;span&gt;</code> containing "&laquo; Back" &ndash; visitors clicking this will see the <i>Offcanvas</i> slide to the right, revealing the parent menu again.</p>
+
+      <h2>Responsive or not &ndash; you choose</h2>
+
+      <p>No media queries have been set for <i>Offcanvas</i>. This is deliberate. It is up to you to set media queries as you choose (or not). You may choose to have <i>Offcanvas</i> to display and operate only for phones, or for tablets and phones, or for any size screen.</p>
+
+      <p>Simply set the <i>Offcanvas</i> components to <code>display: none</code> for the screen screen sizes where you don't require it, as in the following example.</p>
+
+      <pre>@media (min-width: 768px) {
+  #offcanvas-navicon,
+  #offcanvas-overlay,
+  #offcanvas-sidebar {
+    display: none
+  }
+}</pre>
+
+      <h2>6 sidebar options</h2>
+
+      <p><i>Offcanvas</i> is configured for one sidebar instance. But that sidebar could be any one of 6 options.</p>
+
+      <p>Simply include one of <code>@mixin</code>s from <code>scss/import/_options.scss</code> in your <code>body</code> style rule, as in the following example.</p>
+
+      <pre>body {
+  @include offcanvas-under-left;
+  ...
+}</pre>
+
+      <ul>
+          <li><code>@include offcanvas-over-left</code> &ndash; the off-canvas sidebar slides in from the left on a layer over the webpage content (which must be wrapped in a block with <code>id="page-wrap"</code>).</li>
+          <li><code>@include offcanvas-over-right</code> &ndash; the off-canvas sidebar slides in from the right on a layer over the webpage content.</li>
+          <li><code>@include offcanvas-under-left</code> &ndash; the webpage content slides right revealing the off-canvas sidebar to the left.</li>
+          <li><code>@include offcanvas-under-right</code> &ndash; the webpage content slides left revealing the off-canvas sidebar to the right.</li>
+          <li><code>@include offcanvas-push-left</code> &ndash; the off-canvas sidebar slides in from the left, and the webpage content slides right to accommodate it.</li>
+          <li><code>@include offcanvas-push-right</code> &ndash; the off-canvas sidebar slides in from the right, and the webpage content slides left to accommodate it.</li>
+      </ul>
+
+      <p>All these movements are performed by CSS3 transforms.</p>
+
+      <h3>SCSS files included</h3>
+
+      <p>See <code>scss/</code>.</p>
+
+    </div>
+  </section><!-- /#page-wrap -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="js/offcanvas.min.js"></script>
+
+</body>
+
+</html>

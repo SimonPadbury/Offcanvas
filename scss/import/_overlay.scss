@@ -1,0 +1,23 @@
+// OFFCANVAS - overlay
+// ===================
+
+#offcanvas-overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: $offcanvas-color-overlay;
+	opacity: 0;
+	transition: all 400ms ease;
+}
+.offcanvas-open {
+	#offcanvas-overlay {
+		z-index: $offcanvas-overlay-z-index;
+		opacity: $offcanvas-opacity-overlay;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

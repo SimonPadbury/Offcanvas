@@ -1,0 +1,22 @@
+// OFFCANVAS - variables
+// =====================
+
+// All Offcanvas variables use the `offcanvas-` namespace, so as
+// not to interfere with any other variable in your project.
+
+$offcanvas-color-page-wrap-background: #fff;
+// `$offcanvas-color-page-wrap-background` is used only once, in `_base.scss`
+// You will need to change this when you incorporate Offcanvas into your own project.
+// (This sets the background of `#page-wrap` - make this the same as your `<body>` background.)
+
+$offcanvas-color-overlay: #000;
+$offcanvas-opacity-overlay: 0.1;
+$offcanvas-overlay-z-index: 100;
+
+$offcanvas-transition: all 400ms ease;
+
+$offcanvas-box-shadow: 0 0 5px #000;
+
+$offcanvas-sidebar-width: 250px;
+
+// Note: Do all your Offcanvas sidebar and menus styling in `_styling.scss`

@@ -1,0 +1,43 @@
+// OFFCANVAS - navicon
+// ===================
+// Note: In addition to the code below, the left/right position of the navicon is controlled on a per-option basis.
+// See `_options.scss`
+// Animated (transforming) navicon is based on http://www.transformicons.com
+
+#offcanvas-navicon {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    z-index: $offcanvas-overlay-z-index + 2;
+    height: 36px;
+    width: 36px;
+    padding: 10px 6px;
+		transition: all 400ms ease;
+    &:after,
+    &:before,
+    span {
+        display: block;
+        content: '';
+        display: block;
+        height: 4px;
+        margin: 4px 0;
+        border-radius: 2px;
+        background: #000;
+				transition: all 400ms ease;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.offcanvas-open #offcanvas-navicon {
+    &:before {
+			transform: translate3d(0, 8px, 0) rotate(135deg);
+    }
+    &:after {
+			transform: translate3d(0, -8px, 0) rotate(-135deg);
+    }
+    span {
+			transform: scale(0);
+    }
+}

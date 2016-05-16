@@ -1,0 +1,30 @@
+// OFFCANVAS - tester classes
+// ==========================
+// Classes used to prove that Offcanvas is working, during development of this jQuery plugin.
+// You don't need these, but I have kept them in, and I have commented out their `@import` in `offcanvas.scss`.
+// Best practice for production is simply to `@include` one of the `@mixin`s directly in your `body` styling
+// (see `offcanvas.scss`).
+
+.offcanvas-over-left {
+  @include offcanvas-over-left;
+}
+
+.offcanvas-over-right {
+  @include offcanvas-over-right;
+}
+
+.offcanvas-push-left {
+  @include offcanvas-push-left;
+}
+
+.offcanvas-push-right {
+  @include offcanvas-push-right;
+}
+
+.offcanvas-under-left {
+  @include offcanvas-under-left;
+}
+
+.offcanvas-under-right {
+  @include offcanvas-under-right;
+}
