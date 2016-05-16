@@ -1,6 +1,6 @@
 #Offcanvas
 
-*Version 2.0*
+*Version 2.0* – [http://simonpadbury.github.io/Offcanvas/](http://simonpadbury.github.io/Offcanvas/)
 
 Offcanvas is an easy-to-use, touch enabled jQuery off-canvas sidebar plugin with multiple options for configuration. It should be compatible with any CSS framework. The animations are all performed by CSS3.
 
