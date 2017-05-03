@@ -1,10 +1,10 @@
-#Offcanvas
+# Offcanvas
 
 *Version 2.0* – [http://simonpadbury.github.io/Offcanvas/](http://simonpadbury.github.io/Offcanvas/)
 
 Offcanvas is an easy-to-use, touch enabled jQuery off-canvas sidebar plugin with multiple options for configuration. It should be compatible with any CSS framework. The animations are all performed by CSS3.
 
-##Features
+## Features
 
 * Easy to use
 * Touch enabled
@@ -32,7 +32,7 @@ Offcanvas is an easy-to-use, touch enabled jQuery off-canvas sidebar plugin with
 </html>
 ```
 
-##Behaviour
+## Behaviour
 
 The Offcanvas JS injects a [http://www.transformicons.com/](Transformicon)-style animated "hamburger" navicon, a semi-transparent dismiss overlay, and any Offcanvas child menu links and child menu back links as required.
 
@@ -44,7 +44,7 @@ The dismiss overlay is raised (from being hidden at `z-index: -1`) to cover the 
 
 Changing the window-width (e.g. phone or tablet orientation change) will also dismiss the sidebar (and hide the overlay).
 
-##Setup
+## Setup
 
 You can use the example HTML above to get you going.
 
@@ -68,17 +68,17 @@ All you need to do next is add your list of links. Be sure to put any 2nd level 
 ```
 Note: all your other webpage content must be placed within a block element with `id="page-wrap"`.
 
-##Tap or click
+## Tap or click
 
 The Offcanvas JS will respond either to taps (using `touchstart()`) or clicks (`using click()`) depending on whichever pointing device your visitor uses.
 
-##Child menus
+## Child menus
 
 Offcanvas can display 2nd level (child) menus. You simply need to place an unordered list within the parent `<li>` and Offcanvas handle everything.
 
 The jQuery script will insert a `<span>` containing "»" into the parent list item – visitors clicking this will see the Offvanvas sidebar slide to the left, revealing the child menu. And above the child menu the script will insert a `<span>` containing "« Back" – visitors clicking this will see the Offcanvas slide to the right, revealing the parent menu again.
 
-##Responsive or not – you choose
+## Responsive or not – you choose
 
 No media queries have been set for Offcanvas. This is deliberate. It is up to you to set media queries as you choose (or not). You may choose to have Offcanvas to display and operate only for phones, or for tablets and phones, or for any size screen.
 
@@ -94,7 +94,7 @@ Simply set the Offcanvas components to display: none for the screen screen sizes
 }
 ```
 
-##6 sidebar options
+## 6 sidebar options
 
 Offcanvas is configured for one sidebar instance. But that sidebar could be any one of 6 options.
 
@@ -116,6 +116,6 @@ body {
 
 All these movements are performed by CSS3 transforms.
 
-##SCSS files included
+## SCSS files included
 
 See `scss/`.
