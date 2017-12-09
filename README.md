@@ -89,7 +89,7 @@ Simply set the Offcanvas components to display: none for the screen screen sizes
   #offcanvas-navicon,
   #offcanvas-overlay,
   #offcanvas-sidebar {
-    display: none
+    display: none;
   }
 }
 ```
