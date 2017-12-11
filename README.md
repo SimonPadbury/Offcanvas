@@ -13,7 +13,7 @@ Offcanvas is an easy-to-use, touch enabled jQuery off-canvas sidebar plugin with
 * Six off-canvas position/animation configuration options
 * Example HTML
 
-```
+```html
 <!doctype html>
 <html>
   <head>
@@ -50,7 +50,7 @@ You can use the example HTML above to get you going.
 
 All you need to do next is add your list of links. Be sure to put any 2nd level (child) lists within their parent `<li>` in the usual way.
 
-```
+```html
 <h4>Menu 1</h4>
 <ul>
   <li><a href="">Link 1.1</a>
@@ -84,12 +84,12 @@ No media queries have been set for Offcanvas. This is deliberate. It is up to yo
 
 Simply set the Offcanvas components to display: none for the screen screen sizes where you don't require it, as in the following example.
 
-```
+```scss
 @media (min-width: 768px) {
   #offcanvas-navicon,
   #offcanvas-overlay,
   #offcanvas-sidebar {
-    display: none
+    display: none;
   }
 }
 ```
@@ -100,7 +100,7 @@ Offcanvas is configured for one sidebar instance. But that sidebar could be any 
 
 Simply include one of `@mixin`s from `scss/import/_options.scss` in your body style rule, as in the following example.
 
-```
+```scss
 body {
   @include offcanvas-under-left;
   ...
