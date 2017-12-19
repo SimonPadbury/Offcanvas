@@ -4,7 +4,7 @@
 
 @mixin offcanvas-over-left {
   #offcanvas-navicon {
-		left: 16px;
+		left: $offcanvas-navicon-inset-horizontal;
 	}
 	#offcanvas-sidebar {
 		left: 0;
@@ -21,7 +21,7 @@
 
 @mixin offcanvas-over-right {
 	#offcanvas-navicon {
-		right: 16px;
+		right: $offcanvas-navicon-inset-horizontal;
 	}
 	#offcanvas-sidebar {
 		right: 0;
@@ -39,72 +39,84 @@
 
 @mixin offcanvas-push-left {
 	#offcanvas-navicon {
-		left: 16px;
+		left: $offcanvas-navicon-inset-horizontal;
 	}
 	#offcanvas-sidebar {
+    position: fixed;
+    top: 0;
 		left: 0;
     z-index: $offcanvas-overlay-z-index + 1;
-		transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+    margin-left: -$offcanvas-sidebar-width;
 	}
   &.offcanvas-open {
+    #page-wrap {
+      margin-left: $offcanvas-sidebar-width;
+      margin-right: -$offcanvas-sidebar-width;
+    }
     #offcanvas-sidebar {
-			transform: translate3d(0, 0, 0);
-		}
-		#page-wrap {
-			transform: translate3d($offcanvas-sidebar-width, 0, 0);
+      margin-left: 0;
 		}
   }
 }
 
 @mixin offcanvas-push-right {
 	#offcanvas-navicon {
-		right: 16px;
+		right: $offcanvas-navicon-inset-horizontal;
 	}
 	#offcanvas-sidebar {
 		right: 0;
     z-index: $offcanvas-overlay-z-index + 1;
-		transform: translate3d($offcanvas-sidebar-width, 0, 0);
+    margin-right: -$offcanvas-sidebar-width;
 	}
   &.offcanvas-open {
+    #page-wrap {
+      margin-left: -$offcanvas-sidebar-width;
+      margin-right: $offcanvas-sidebar-width;
+    }
     #offcanvas-sidebar {
-			transform: translate3d(0, 0, 0);
-		}
-		#page-wrap {
-			transform: translate3d(-$offcanvas-sidebar-width, 0, 0);
+      margin-right: 0;
 		}
   }
 }
 
 @mixin offcanvas-under-left {
 	#offcanvas-navicon {
-		left: 16px;
+		left: $offcanvas-navicon-inset-horizontal;
 	}
 	#offcanvas-sidebar {
+    left: 0;
 		z-index: 0;
 	}
-	#page-wrap {
+  #page-wrap {
+    position: relative;
+    z-index: 1;
     box-shadow: $offcanvas-box-shadow;
+    transition: $offcanvas-transition;
   }
   &.offcanvas-open {
+    #page-wrap {
+      margin-left: $offcanvas-sidebar-width;
+      margin-right: -$offcanvas-sidebar-width;
+    }
     #offcanvas-overlay {
 			transform: translate3d($offcanvas-sidebar-width, 0, 0);
-		}
-		#page-wrap {
-      transform: translate3d($offcanvas-sidebar-width, 0, 0);
 		}
   }
 }
 
 @mixin offcanvas-under-right {
 	#offcanvas-navicon {
-		right: 16px;
+		right: $offcanvas-navicon-inset-horizontal;
 	}
 	#offcanvas-sidebar {
 		right: 0;
     z-index: 0;
 	}
   #page-wrap {
+    position: relative;
+    z-index: 1;
     box-shadow: $offcanvas-box-shadow;
+    transition: $offcanvas-transition;
   }
   &.offcanvas-open {
     #offcanvas-overlay {

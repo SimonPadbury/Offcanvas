@@ -5,28 +5,30 @@
 // Animated (transforming) navicon is based on http://www.transformicons.com
 
 #offcanvas-navicon {
-    position: absolute;
-    top: 8px;
+    position: fixed;
+    top: $offcanvas-navicon-inset-top;
     right: 0;
     z-index: $offcanvas-overlay-z-index + 2;
-    height: 36px;
-    width: 36px;
+    height: 48px;
+    width: 48px;
     padding: 10px 6px;
-		transition: all 400ms ease;
+    background: $offcanvas-navicon-background;
+    border-radius: $offcanvas-navicon-border-radius;
+    transition: $offcanvas-transition;
     &:after,
     &:before,
     span {
-        display: block;
-        content: '';
-        display: block;
-        height: 4px;
-        margin: 4px 0;
-        border-radius: 2px;
-        background: #000;
-				transition: all 400ms ease;
+      display: block;
+      content: '';
+      display: block;
+      height: 4px;
+      margin: 4px;
+      border-radius: 2px;
+      background: #000;
+			transition: $offcanvas-transition;
     }
     &:hover {
-        cursor: pointer;
+      cursor: pointer;
     }
 }
 

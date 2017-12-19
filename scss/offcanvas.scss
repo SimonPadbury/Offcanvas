@@ -1,28 +1,15 @@
-// OFFCANVAS version 2.0
+// OFFCANVAS version 3.0
 // =====================
 
-@import 'import/variables';
-@import 'import/base';
-@import 'import/navicon';
-@import 'import/overlay';
-@import 'import/options';
-@import 'import/styling';
-//@import 'import/test';
-
-/*
-Note: `_test.scss` contains the six classes made from `@includes` on `_options.css`. E.g.
-
-.offcanvas-under-right {
-	@include offcanvas-over-right;
-}
-
-You don't need these classes. Instead, `@include` the mixin directly in the `body` style rule. See below.
-*/
+@import 'import/_offcanvas-variables';
+@import 'import/_offcanvas-base';
+@import 'import/_offcanvas-navicon';
+@import 'import/_offcanvas-options';
+@import 'import/_offcanvas-styling';
 
 body {
-	@include offcanvas-over-right;
+	@include offcanvas-push-right;
 }
-
 
 /*
 Example media query - to hide Offcanvas on screen widths above 768px.
