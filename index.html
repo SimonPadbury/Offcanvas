@@ -15,57 +15,305 @@
     */
 
     html {
-        box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     *,
     *:before,
     *:after {
-        box-sizing: inherit;
+      box-sizing: inherit;
     }
 
     body {
-        margin: 0;
-        font-family: sans-serif;
-        font-size: 18px;
-        line-height: 1.618;
-      }
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
 
     .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
     }
-
+    header {
+      margin: 0;
+      border-bottom: 4px solid #777;
+    }
     h1 {
-      font-size: 60px;
-      font-weight: lighter;
+      margin: 0;
+      font-size: 96px;
+      line-height: 1;
+      font-weight: 100;
     }
-
-    h2 {
-      font-weight: lighter;
+    @media (max-width: 767px) {
+      h1 {
+        font-size: 64px;
+        line-height: 1;
+      }
     }
     code {
-        display: inline-block;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        padding: 0 3px;
-        font-size: 16px;
-        background: #f6f6f6;
+      display: inline-block;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 0 3px;
+      font-size: 16px;
+      color: #800;
+      background: #f6f6f6;
     }
 
     pre {
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        padding: 10px;
-        font-size: 16px;
-        background: #f6f6f6;
-        overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 10px;
+      font-size: 16px;
+      color: #800;
+      background: #f6f6f6;
+      overflow-y: auto;
+    }
+    .intro {
+      font-size: 1.5em;
+      line-height: 1.5;
+    }
+    .numbered-para {
+      padding: 6px 0 0 40px;
+    }
+    .number {
+      display: block;
+      float: left;
+      width: 35px;
+      height: 35px;
+      margin: -6px 0 0 -40px;
+      padding: 0;
+      font-size: 24px;
+      line-height: 35px;
+      text-align: center;
+      color: #fff;
+      background-color: #777;
+      border-radius: 50%;
+    }
+    footer {
+      margin-top: 72px;
+      border-top: 4px solid #777;
+      padding: 16px;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
+
+  <main id="page-wrap">
+    <div class="container">
+
+      <header>
+        <h1>Offcanvas</h1>
+
+        <h3 style="position: relative; margin-top: 0;"><i>Version 3.0</i><br />
+        <a href="https://github.com/SimonPadbury/Offcanvas">GitHub Repository</a></h3>
+      </header>
+
+      <p class="intro">Offcanvas is an easy-to-use, touch-enabled jQuery and SCSS off-canvas sidebar plugin with multiple options for configuration. It should be compatible with any CSS framework. The animations are all performed by CSS3.</p>
+
+      <h2>Features</h2>
+
+      <ul>
+        <li>Easy to use</li>
+        <li>Touch enabled</li>
+        <li>Tiny JS (<code>offcanvas.min.js</code>: 1 KB minified) <li>Tiny CSS (<code>offcanvas.min.css</code>: 2 KB minified)</li>
+        <li>SCSS included</li>
+        <li>Revealable 2<sup>nd</sup> level menus</li>
+        <li>Dismiss (totally reset) Offcanvas by click/tapping the navicon again or by click/tapping <i>anywhere outside</i> Offcanvas</li>
+        <li>Six configuration options (left/right &times; over/push/under)</li>
+      </ul>
+
+      <h2>Setup</h2>
+
+      <p class="numbered-para">
+        <span class="number">1</span> <b>The HTML can be as simple as in the following example.</b>
+      </p>
+
+      <pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    ...
+    &lt;link href="<b>path/to/offcanvas.css</b>" rel="stylesheet" type="text/css" media="screen"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    <mark>&lt;div id="offcanvas-sidebar"&gt; ... &lt;/div&gt;</mark>
+
+    <mark>&lt;div id="page-wrap"&gt; ... &lt;/div&gt;</mark>
+
+    &lt;script src="<b>path/to/jquery.js</b>"&gt;&lt;/script&gt;
+    &lt;script src="<b>path/to/offcanvas.js</b>"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+      <p>
+        If you choose Offcanvas <b>over</b> options (see below), then the block <code>id="page-wrap"</code> is not necessary &ndash; it is only used for Offcanvas <b>push</b> or <b>under</b>, for enabling the page content to slide left or right.
+      </p>
+
+      <p>
+        The HTML order of <code>id="offcanvas-sidebar"</code> and <code>id="page-wrap"</code> is up to you &ndash; you choose, according to your own considerations (e.g. accessibility, and what your Offcanvas acrually contains).
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">2</span> <b>Then, all you need to do is add your list of links</b> &ndash; and some headings if required.
+      </p>
+
+      <pre><mark>&lt;div id="offcanvas-sidebar"&gt;</mark>
+  &lt;h4&gt;Menu 1&lt;/h4&gt;          &#11013; <b>OPTIONAL</b>
+    &lt;ul&gt;
+    &lt;li&gt;&lt;a href=""&gt;Link 1.1&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=""&gt;Link 1.1.1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Link 1.1.2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Link 1.1.3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Link 1.1.4&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Link 1.2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Link 1.3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Link 1.4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+<mark>&lt;/div&gt;</mark></pre>
+
+      <p>
+        Your headings can also be links, if you need them to be. In that case, you can think of your Offcanvas as having three levels of menu links (parent, child and grandchild.)
+      </p>
+
+      <h2>Behaviour</h2>
+
+      <p class="numbered-para">
+        <span class="number">1</span> <b>Navicon</b>
+      </p>
+
+      <p>
+        The Offcanvas JS injects a <a href="http://www.transformicons.com">Transformicon</a>-style animated "hamburger" navicon and any Offcanvas Menus and back-links as required.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">2</span> <b>Fixed position</b>
+      </p>
+
+      <p>
+        The navicon is CSS <code>position:fixed</code> to the top-right or top-left corner of the window, depending on whether you configure a left or right Offcanvas.
+      </p>
+
+      <p>
+        Offcanvas is set to be <i>always available</i> by CSS <code>position:fixed</code> wherever your visitor activates it, from any scroll position on the webpage. And it resets to its starting scroll/ first-level menu state whenever a visitor dismisses it.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">3</span> <b>2<sup>nd</sup> level menu</b>
+      </p>
+
+      <p>
+        Offcanvas can display 2<sup>nd</sup> level menus (sub-menus). All you need to do is place an unordered list within the parent <code>&lt;li&gt;</code> and Offcanvas will handle everything.
+      </p>
+
+      <p>
+        The Offcanvas JS will insert a <code>&lt;span&gt;</code> containing <code>&raquo;</code> into the parent list item &ndash; visitors clicking this will see the Offvanvas sidebar slide to the left, revealing the child menu. And above the child menu the script will insert a <code>&lt;span&gt;</code> containing <code>&laquo; Back</code> &ndash; visitors clicking this will see the Offcanvas slide to the right, revealing the parent menu again.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">4</span> <b>Tap or click</b>
+      </p>
+
+      <p>
+        The Offcanvas JS will respond either to taps (using <code>touchstart()</code>) or clicks (using <code>click()</code>) depending on whichever pointing device your visitor uses.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">5</span> <b>Dismissable three ways</b>
+      </p>
+
+      <p>
+        When Offcanvas is opened (activated), it can be dismissed by eny of these three methods:
+      </p>
+
+      <ol>
+        <li>
+          By click/tapping the navicon again
+        </li>
+        <li>
+          By click/tapping <i>anywhere outside</i> Offcanvas  i.e. anywhere on your content. (Since Offcanvas version 3, this is accomplished entirely by the JS script &ndash; not by click/tapping an overlay, as in earlier versions of Offcanvas.)
+        </li>
+        <li>
+          Changing the window-width (e.g. rotating a phone or tablet between portrait and landscape orientation) will also dismiss Offcanvas.
+        </li>
+      </ol>
+
+      <h2>Six sidebar options</h2>
+
+      <p>In the GitHub repository, <code>offvanvas.css</code> is demonstrating Offvanvass in "offcanvas-push-right" mode. But if you can configure the SCSS, then Offcanvas can have any one of six options.</p>
+
+      <p>Simply include one of mixins from <code>scss/import/_options.scss</code> in your <code>body</code> style rule, as in the following example.</p>
+
+      <pre>body {
+  @include offcanvas-push-right;
+}</pre>
+
+      <p class="numbered-para">
+        <span class="number">1</span> <code>@include offcanvas-over-left</code> &ndash; the off-canvas sidebar slides in from the left on a layer over the webpage content.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">2</span> <code>@include offcanvas-over-right</code> &ndash; the off-canvas sidebar slides in from the right on a layer over the webpage content.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">3</span> <code>@include offcanvas-under-left</code> &ndash; the webpage content* slides right revealing the off-canvas sidebar to the left.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">4</span> <code>@include offcanvas-under-right</code> &ndash; the webpage content* slides left revealing the off-canvas sidebar to the right.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">5</span> <code>@include offcanvas-push-left</code> &ndash; the off-canvas sidebar slides in from the left, and the webpage content* slides right to accommodate it.
+      </p>
+
+      <p class="numbered-para">
+        <span class="number">6</span> <code>@include offcanvas-push-right</code> &ndash; the off-canvas sidebar slides in from the right, and the webpage content* slides left to accommodate it.
+      </p>
+
+      <p>
+        *For these four options, your webpage content must be wrapped as follows:
+      </p>
+
+      <pre>
+<mark>&lt;div id="page-wrap"&gt;</mark>
+
+  &lt;!-- Your webpage content --&gt;
+
+<mark>&lt;/div&gt;</mark>
+</pre>
+
+      <p>All these movements are performed by CSS3 transforms.</p>
+
+      <h2>Responsive or not &ndash; you choose</h2>
+
+      <p>No media queries have been set for Offcanvas. This is deliberate. It is up to you to set media queries as you choose (or not). You may choose to have Offcanvas to display and operate only for phones, or for tablets and phones, or for any size screen.</p>
+
+      <p>Simply set the Offcanvas components to <code>display: none</code> for the screen screen sizes where you don't require it, as in the following example.</p>
+
+      <pre>@media (min-width: 768px) {
+  #offcanvas-navicon,
+  #offcanvas-overlay,
+  #offcanvas-sidebar {
+    display: none
+  }
+}</pre>
+
+      <footer>
+        <b>Offcanvas</b> <i>version 3.0</i> &mdash; <a href="https://github.com/SimonPadbury/Offcanvas">GitHub Repository</a>
+      </footer>
+
+    </div><!-- /.container -->
+
+  </main><!-- /#page-wrap -->
 
   <section id="offcanvas-sidebar">
     <div>
@@ -162,133 +410,6 @@
       </ul>
     </div>
   </section>
-
-  <section id="page-wrap">
-    <div class="container">
-
-      <h1>Offcanvas</h1>
-
-      <p><i>Version 2.0</i> &ndash; <a href="https://github.com/SimonPadbury/Offcanvas">https://github.com/SimonPadbury/Offcanvas</a></p>
-
-      <p>Offcanvas is an easy-to-use, touch enabled jQuery off-canvas sidebar plugin with multiple options for configuration. It should be compatible with any CSS framework. The animations are all performed by CSS3.</p>
-
-      <h2>Features</h2>
-
-      <ul>
-        <li>Easy to use</li>
-        <li>Touch enabled</li>
-        <li>Small filesizes for JS (<code>offcanvas.min.js</code>: 1 KB) and CSS (<code>offcanvas.min.css</code>: 3 KB)</li>
-        <li>SCSS project</li>
-        <li>Six off-canvas position/animation configuration options</li>
-      </ul>
-
-      <h2>Example HTML</h2>
-
-      <pre>&lt;!doctype html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    ...
-    &lt;link href="<b>path/to/offcanvas.css</b>" rel="stylesheet" type="text/css" media="screen"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-
-    <mark>&lt;section id="offcanvas-sidebar"&gt; ... &lt;/section&gt;</mark>
-
-    <mark>&lt;section id="page-wrap"&gt; ... &lt;/section&gt;</mark>
-
-    &lt;script src="<b>path/to/jquery.js</b>"&gt;&lt;/script&gt;
-    &lt;script src="<b>path/to/offcanvas.js</b>"&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
-
-      <h2>Behaviour</h2>
-
-      <p>The <i>Offcanvas</i> JS injects a <a href="http://www.transformicons.com">Transformicon</a>-style animated "hamburger" navicon, a semi-transparent dismiss overlay, and any <i>Offcanvas</i> child menu links and child menu back links as required.</p>
-
-      <p>The navicon is CSS <code>position:fixed</code> to the top-right or top-left corner of the window, depending on whether you configure a left or right off-canvas sidebar.</p>
-
-      <p>The <i>Offcanvas</i> sidebar is set to be always available wherever your visitor activates it, from any scroll position on the webpage. And it resets to its starting scroll/ first-level menu state whenever a visitor dismisses it.</p>
-
-      <p>The dismiss overlay is raised (from being hidden at <code>z-index: -1</code>) to cover the webpage during <i>Offcanvas</i> sidebar exposure. Click or tap this overlay (or the navicon) to dismiss it sidebar and hide the overlay again.</p>
-
-      <p>Changing the window-width (e.g. phone or tablet orientation change) will also dismiss the sidebar (and hide the overlay).</p>
-
-      <h2>Setup</h2>
-
-      <p>You can use the example HTML above to get you going.</p>
-
-      <p>All you need to do next is add your list of links. Be sure to put any 2<sup>nd</sup> level (child) lists within their parent <code>&lt;li&gt;</code> in the usual way.</p>
-
-      <pre>&lt;h4&gt;Menu 1&lt;/h4&gt;
-&lt;ul&gt;
-  <mark>&lt;li&gt;</mark>&lt;a href=""&gt;Link 1.1&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=""&gt;Link 1.1.1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;Link 1.1.2&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;Link 1.1.3&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=""&gt;Link 1.1.4&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  <mark>&lt;/li&gt;</mark>
-  &lt;li&gt;&lt;a href=""&gt;Link 1.2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=""&gt;Link 1.3&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=""&gt;Link 1.4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-
-      <p><strong>Note:</strong> all your other webpage content must be placed within a block element with <code>id="page-wrap"</code>.
-
-      <h2>Tap or click</h2>
-
-      <p>The <i>Offcanvas</i> JS will respond either to taps (using <code>touchstart()</code>) or clicks (using <code>click()</code>) depending on whichever pointing device your visitor uses.
-
-      <h2>Child menus</h2>
-
-      <p><i>Offcanvas</i> can display 2<sup>nd</sup> level (child) menus. You simply need to place an unordered list within the parent &lt;li&gt; and <i>Offcanvas</i> handle everything.</p>
-
-      <p> The jQuery script will insert a <code>&lt;span&gt;</code> containing "&raquo;" into the parent list item &ndash; visitors clicking this will see the <i>Offvanvas</i> sidebar slide to the left, revealing the child menu. And above the child menu the script will insert a <code>&lt;span&gt;</code> containing "&laquo; Back" &ndash; visitors clicking this will see the <i>Offcanvas</i> slide to the right, revealing the parent menu again.</p>
-
-      <h2>Responsive or not &ndash; you choose</h2>
-
-      <p>No media queries have been set for <i>Offcanvas</i>. This is deliberate. It is up to you to set media queries as you choose (or not). You may choose to have <i>Offcanvas</i> to display and operate only for phones, or for tablets and phones, or for any size screen.</p>
-
-      <p>Simply set the <i>Offcanvas</i> components to <code>display: none</code> for the screen screen sizes where you don't require it, as in the following example.</p>
-
-      <pre>@media (min-width: 768px) {
-  #offcanvas-navicon,
-  #offcanvas-overlay,
-  #offcanvas-sidebar {
-    display: none
-  }
-}</pre>
-
-      <h2>6 sidebar options</h2>
-
-      <p><i>Offcanvas</i> is configured for one sidebar instance. But that sidebar could be any one of 6 options.</p>
-
-      <p>Simply include one of <code>@mixin</code>s from <code>scss/import/_options.scss</code> in your <code>body</code> style rule, as in the following example.</p>
-
-      <pre>body {
-  @include offcanvas-under-left;
-  ...
-}</pre>
-
-      <ul>
-          <li><code>@include offcanvas-over-left</code> &ndash; the off-canvas sidebar slides in from the left on a layer over the webpage content (which must be wrapped in a block with <code>id="page-wrap"</code>).</li>
-          <li><code>@include offcanvas-over-right</code> &ndash; the off-canvas sidebar slides in from the right on a layer over the webpage content.</li>
-          <li><code>@include offcanvas-under-left</code> &ndash; the webpage content slides right revealing the off-canvas sidebar to the left.</li>
-          <li><code>@include offcanvas-under-right</code> &ndash; the webpage content slides left revealing the off-canvas sidebar to the right.</li>
-          <li><code>@include offcanvas-push-left</code> &ndash; the off-canvas sidebar slides in from the left, and the webpage content slides right to accommodate it.</li>
-          <li><code>@include offcanvas-push-right</code> &ndash; the off-canvas sidebar slides in from the right, and the webpage content slides left to accommodate it.</li>
-      </ul>
-
-      <p>All these movements are performed by CSS3 transforms.</p>
-
-      <h3>SCSS files included</h3>
-
-      <p>See <code>scss/</code>.</p>
-
-    </div>
-  </section><!-- /#page-wrap -->
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="js/offcanvas.min.js"></script>

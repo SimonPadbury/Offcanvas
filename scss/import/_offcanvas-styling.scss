@@ -1,0 +1,77 @@
+// OFFCANVAS - sidebar styling
+
+@mixin offcanvas_link {
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  &:hover {
+    color: #ccc;
+    background: #444;
+    cursor: pointer;
+  }
+}
+
+#offcanvas-sidebar {
+  background: #111;
+  padding-top: 50px; // to push everything below the navicon
+  h4 {
+    margin: 24px 0 0;
+    color: #aaa;
+    padding: 8px 16px;
+  }
+  h4 a {
+    margin: -8px -16px;
+  }
+  ul {
+    width: $offcanvas-sidebar-width;
+  	margin: 0;
+  	border-top: 1px solid #999;
+    list-style-type: none;
+    padding: 0
+  }
+  li {
+    border-bottom: 1px solid #999;
+  }
+  a {
+    display: block;
+    padding: 8px 16px;
+    @include offcanvas_link;
+  }
+  ul ul {
+    display: none;
+    position: absolute;
+    float: right;
+    margin-top: -41px;
+    margin-left: $offcanvas-sidebar-width
+  }
+  div {
+    transition: $offcanvas-transition;
+  }
+  &.offcanvas-child-open > div {
+    margin-left: -$offcanvas-sidebar-width;
+    .offcanvas-child-visible {
+      display: block
+    }
+  }
+}
+.offcanvas-child-link {
+  position: absolute;
+  display: inline-block;
+  width: 44px;
+  height: 40px;
+  margin-top: -40px;
+  margin-left: $offcanvas-sidebar-width - 44px;
+  border-left: 1px solid #999;
+  padding: 6px 16px;
+  background: #111;
+  @include offcanvas_link;
+}
+.offcanvas-child-back-link {
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin-top: -42px;
+  border-top: 1px solid #999;
+  padding: 8px 16px;
+  @include offcanvas_link;
+}
